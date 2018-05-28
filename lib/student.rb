@@ -69,8 +69,8 @@ class Student
 
   DB[:conn].execute(sql,name).collect do |row|
     self.new_from_db(row)
-  end.first
-end
+    end.first
+  end
 
   def update
     sql = <<-SQL
