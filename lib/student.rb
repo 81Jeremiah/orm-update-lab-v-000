@@ -2,9 +2,8 @@ require_relative "../config/environment.rb"
 
 class Student
   attr_accessor :name, :grade, :id
-
-
   @@all = []
+
   def initialize(name,grade, id=nil)
     @id = id
     @name = name
@@ -23,8 +22,7 @@ class Student
 
     DB[:conn].execute(sql)
   end
-  # Remember, you can access your database connection anywhere in this class
-  #  with DB[:conn]
+
   def self.drop_table
     sql = <<-SQL
     DROP TABLE IF EXISTS students;
